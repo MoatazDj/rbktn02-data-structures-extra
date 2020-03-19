@@ -129,7 +129,7 @@ LinkedList.prototype.removeHead = function() {
 
 LinkedList.prototype.findNode = function(value) {
   var searchedNode = this.head
-  while (condition) {
+  while (searchedNode) {
     if (searchedNode.value === value) {
       return searchedNode
     }
