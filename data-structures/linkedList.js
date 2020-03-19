@@ -96,31 +96,54 @@ LinkedList.prototype.forEach = function(callback) {
 // Time complexity:
 
 LinkedList.prototype.print = function() {
-  // implement me...
+  var current = this.head
+  while(current){
+      console.log(current)
+      current=current.next
+  }
 };
 // Time complexity:
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // implement me...
+  
 };
 // Time complexity:
 
 LinkedList.prototype.removeAfter = function(node) {
-  // implement me...
+  
 };
 // Time complexity:
 
 LinkedList.prototype.insertHead = function(value) {
-  // implement me...
+  var newNode = new Node(value)
+  if (this.head === null) {
+    this.head = newNode
+  }
+  this.head.next = newNode
 };
 // Time complexity:
 
 LinkedList.prototype.removeHead = function() {
-  // implement me...
+  var newNode = new Node(value)
+  if (this.head === null) {
+    this.head = newNode
+  }
+  var tail = this.head;
+   while(tail.next !== null){
+        tail = tail.next;
+   }
+   tail.next = newNode;
 }
 
 LinkedList.prototype.findNode = function(value) {
-  // implement me...
+  var searchedNode = this.head
+  while (condition) {
+    if (searchedNode.value === value) {
+      return searchedNode
+    }
+    searchedNode = searchedNode.next
+  }
+  return null
 };
 // Time complexity:
 
