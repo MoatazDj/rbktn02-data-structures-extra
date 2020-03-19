@@ -1,8 +1,6 @@
 /*
-
 QUEUE
 
-Abstract data type
 FIFO - First in, first out
 Collection of elements with enqueue and dequeue operations.
 Note that there is a natural order. Elements are removed in the reverse order of their addition.
@@ -48,28 +46,42 @@ What's the time complexity?
 
 
 
- */
+*/
 
 function Queue(capacity) {
-  // implement me...
+  this.capacity = capacity || Infinity;
+  this.head = 0;
+  this.tail = 0;
+  this.storage = {};
 }
 
 Queue.prototype.enqueue = function(value) {
-  // implement me...
+  this.tail++;
+  if(this.tail <= this.capacity){
+    this.storage[this.tail] = item;
+  }else{
+    return 'Max capacity already reached. Remove element before adding a new one.';
+  }
 };
 // Time complexity:
 
 Queue.prototype.dequeue = function() {
-  // implement me...
+  if((this.tail-this.head)>0){
+    var result = this.storage[this.head];
+    delete this.storage[this.head];
+    this.head++;
+    this.tail--;
+    return result;
+  }
 };
 // Time complexity:
 
 Queue.prototype.peek = function() {
-  // implement me...
+  return this.storage[this.head];
 };
 
 Queue.prototype.count = function() {
-  // implement me...
+  return this.tail-this.head
 };
 // Time complexity:
 
