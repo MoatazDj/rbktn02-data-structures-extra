@@ -124,15 +124,7 @@ LinkedList.prototype.insertHead = function(value) {
 // Time complexity:
 
 LinkedList.prototype.removeHead = function() {
-  var newNode = new Node(value)
-  if (this.head === null) {
-    this.head = newNode
-  }
-  var tail = this.head;
-   while(tail.next !== null){
-        tail = tail.next;
-   }
-   tail.next = newNode;
+  
 }
 
 LinkedList.prototype.findNode = function(value) {
@@ -148,7 +140,15 @@ LinkedList.prototype.findNode = function(value) {
 // Time complexity:
 
 LinkedList.prototype.appendToTail = function(value) {
-  // implement me...
+  var newNode = new Node(value)
+  if (this.head === null) {
+    this.head = newNode
+  }
+  var tail = this.head;
+   while(tail.next !== null){
+        tail = tail.next;
+   }
+   tail.next = newNode;
 };
 // Time complexity:
 
