@@ -77,7 +77,7 @@ Stack.prototype.pop = function() {
 // Time complexity:
 
 Stack.prototype.peek = function() {
-  var result = this.storage[this.Index];
+  var result = this.storage[this.Index-1];
   return result;
 };
 // Time complexity:
@@ -87,6 +87,15 @@ Stack.prototype.count = function() {
 };
 // Time complexity:
 
+Stack.prototype.contain= function (target)  {
+  var result = false;
+  for(var key in this){
+    if(this[key] === target){
+      result = true;
+    }
+  }
+  return result;
+}
 
 /*
 *** Exercises:

@@ -119,17 +119,7 @@ LinkedList.prototype.insertAfter = function(node, value) {
 // Time complexity:
 
 LinkedList.prototype.removeAfter = function(node) { 
-    var removedNode = node.next;
-    if (!removedNode){
-      return 'Nothing to remove';
-    } 
-    var newNext = removedNode.next;
-    node.next = newNext;
-    removedNode.next = null;
-    if (removedNode === this.tail){
-      this.tail = node;
-    }
-  return removedNode;
+    
 };
 // Time complexity:
 
@@ -175,7 +165,6 @@ LinkedList.prototype.appendToTail = function(value) {
 LinkedList.prototype.insertBefore = function(node, value) {
   var currentNode = this.head
   var beforeNode
-
 };
 // Time complexity:
 

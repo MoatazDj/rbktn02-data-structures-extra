@@ -40,31 +40,41 @@ Make your set able to take objects, arrays, and functions as values in addition 
  */
 
 function Set(capacity) {
-  // implement me...
+  this.storage = {}
+  this.count = 0
 }
 
 Set.prototype.count = function() {
-  // implement me...
+  return this.count
 };
 // Time complexity:
 
 Set.prototype.add = function(value) {
-  // implement me...
+  this.storage[value] = value 
+  this.count++
 };
 // Time complexity:
 
 Set.prototype.delete = function(value) {
-  // implement me...
+  if (this.storage[value] === value) {
+    var deletedSet = this.storage[value];
+    delete this.storage[value];
+    this.count--
+  }
+  return deletedSet
 };
 // Time complexity:
 
 Set.prototype.has = function(value) {
-  // implement me...
+  if (this.storage[value] === value) {
+    return true;
+  }
+  return false
 };
 // Time complexity:
 
 Set.prototype.forEach = function(callback) {
-  // implement me...
+  
 };
 // Time complexity:
 

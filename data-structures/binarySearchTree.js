@@ -55,10 +55,13 @@ function BinarySearchTree (value) {
   this.value = value;
   this.left = null;
   this.right = null;
+  this.root = null;
 }
 
 BinarySearchTree.prototype.insert = function(value) {
-  // implement me...
+  if (this.root === null) {
+    this.root = new BinarySearchTree(value)
+  }
 };
 // Time complexity:
 
